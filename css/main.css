@@ -4,6 +4,9 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{
+    margin-top: 102.34px;
+}
 header{
     position:fixed;
     top:0;
@@ -42,4 +45,5 @@ ul{
 }
 li{
     padding:1em;
+    cursor: pointer;
 }
