@@ -7,8 +7,21 @@
     <link rel="icon" href="img/logo.ico">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/cartas.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="https://kit.fontawesome.com/17cb6f1d17.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="contenedor-modal">
+        <div class="modal">
+            <i class="fa-regular fa-circle-xmark"></i>
+            <h3>¿En qué mesa está sentado?</h3>
+            <form action="" method="post">
+                <input type="number" name="mesa" id="mesa" placeholder="El número está pegado en la mesa">
+                <input type="submit" value="Empezar a pedir">
+            </form>
+            <em>Recuerde que solo puede pedir si se encuentra en el local</em>
+        </div>
+    </div>
     <header>
         <div class="titulo">
             <img src="img/logo.png" alt="Logo de amor casero" title="Logo de amor casero">
@@ -25,7 +38,7 @@
         </nav>
     </header>
     <main>
-        <h1><i>La mejor comida que podrás encontrar en el planeta tierra...</i></h1>
+        <h1><em>La mejor comida que podrás encontrar en el planeta tierra...</em></h1>
         <div class="contenedor-cartas">
             <div class="carta">
                 <h3>Milanesas</h3>
