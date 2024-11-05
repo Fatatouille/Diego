@@ -47,3 +47,27 @@ li{
     padding:1em;
     cursor: pointer;
 }
+
+footer{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background: #262626;
+    color:#fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3em;
+}
+.pie{
+    width: 80%;
+    text-align: center;
+}
+.contactos{
+    width:20%;
+    padding:1em;
+}
+.contactos img{
+    width: 1.6em;
+    margin:1em;
+}
