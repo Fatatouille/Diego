@@ -11,9 +11,9 @@
     <script src="https://kit.fontawesome.com/17cb6f1d17.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="contenedor-modal">
+    <div class="contenedor-modal" id="contenedor-modal">
         <div class="modal">
-            <i class="fa-regular fa-circle-xmark"></i>
+            <i class="fa-regular fa-circle-xmark" id="cerrar"></i>
             <h3>¿En qué mesa está sentado?</h3>
             <form action="" method="post">
                 <input type="number" name="mesa" id="mesa" placeholder="El número está pegado en la mesa">
@@ -33,7 +33,7 @@
         <nav>
             <ul>
                 <li>Contactanos</li>
-                <li>Haz tu pedido</li>
+                <li id="modal-log">Haz tu pedido</li>
             </ul>
         </nav>
     </header>
@@ -68,5 +68,6 @@
             <img src="img/llamadaLogo.png" alt="Nuestro numero" title="Nuestro numero">
         </div>
     </footer>
+    <script src="js/modal.js"></script>
 </body>
 </html>

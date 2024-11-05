@@ -3,7 +3,7 @@
     height: 100%;
     width: 100%;
     background: #2525256a;
-    display: flex;
+    display: none;
     justify-content: center;
     z-index: 1;
 }
@@ -52,4 +52,5 @@ i{
     right: 0;
     cursor:pointer;
     padding:.4em;
+    font-size: 1.4em;
 }
