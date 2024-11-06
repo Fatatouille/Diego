@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST) && isset($_SESSION['mesa']) && $_SESSION['mesa']== 'Admin'){
+if(isset($_POST) && isset($_SESSION['mesa']) && $_SESSION['mesa']== 255){
     require_once('conexion.php');
     $conexion=conectar();
 
@@ -9,7 +9,8 @@ if(isset($_POST) && isset($_SESSION['mesa']) && $_SESSION['mesa']== 'Admin'){
     $clasificacion = $_POST['clasificacion'];
     $stock = $_POST['stock'];
 
-    $ins = mysqli_prepare($conexion, "INSERT INTO carta (Nombre, Precio, Clasificacion, Stock) VALUES ('$nombre', '$precio', '$clasificacion', '$stock')");
+    $ins = mysqli_prepare($conexion, "INSERT INTO carta (Nombre, Precio, Clasificacion, Stock) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($ins, "sdsi", $nombre, $precio, $clasificacion, $stock);
 
     if(mysqli_stmt_execute($ins)){
         //Si se logra insertar los datos, mostramos un mensaje y volvemos a la página del admin
@@ -28,4 +29,8 @@ if(isset($_POST) && isset($_SESSION['mesa']) && $_SESSION['mesa']== 'Admin'){
             ?><script>alert("Error en la base de datos.")</script> <?php
         }
     }
+    mysqli_stmt_close($ins);
+    desconectar($conexion);
+}else{
+    header("refresh:0; url=../admin.php");
 }

@@ -29,11 +29,11 @@
                         <h3>Cargar nuevo producto</h3>
 
                         <label for="nombre">Nombre del producto</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Comida rica">
+                        <input type="text" name="nombre" id="nombre" placeholder="Comida rica" required>
                         <label for="precio">Precio</label>
-                        <input type="number" name="precio" id="precio" placeholder="$0.00">
+                        <input type="number" name="precio" id="precio" placeholder="$0.00" required>
                         <label for="clasificacion">Clasificacion</label>
-                        <select name="clasificacion" id="clasificacion">
+                        <select name="clasificacion" id="clasificacion" required>
                             <option value="Milanesa">Milanesa</option>
                             <option value="Hamburguesa">Hamburguesa</option>
                             <option value="Pizza">Pizza</option>
@@ -42,16 +42,18 @@
                             <option value="Bebida">Bebida</option>
                         </select>
                         <label for="stock">Stock</label>
-                        <input type="number" name="stock" id="stock" placeholder="100">
+                        <input type="number" name="stock" id="stock" placeholder="100" required>
                         <input type="submit" value="Cargar">
                     </form>
                     <div class="stock">
                         <h3>Actualizar stock</h3>
                         <form action="config/actualizar.php" method="post">
                             <label for="prod">Producto a actualizar</label>
-                            <input type="text" name="nombre" id="prod">
+                            <input type="text" name="nombre" id="prod" required>
+                            <label for="pre">Precio</label>
+                            <input type="number" name="precio" id="pre" required>
                             <label for="st">Stock</label>
-                            <input type="number" name="stock" id="prod">
+                            <input type="number" name="stock" id="st" required>
                             <input type="submit" value="Actualizar">
                         </form>
                     </div>
