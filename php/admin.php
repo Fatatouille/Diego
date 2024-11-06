@@ -40,11 +40,14 @@
                             <?= '$'.$cobrar ?>
                         </div>
                     </div>
-                <?php } ?>
+                <?php }
+                    mysqli_stmt_close($consulta);
+                ?>
             </div>
         </section>
     <?php 
         require('footer.php');
+        desconectar($conexion);
     }else{
         header("refresh:0; url=../index.php");
     }
