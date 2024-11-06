@@ -22,6 +22,9 @@
 .modmin{
     height: 82% !important;
 }
+.modmin h2:hover{
+    color:#fc0000;
+}
 .modal form{
     display: flex;
     padding-top:1em;
@@ -62,4 +65,7 @@ i{
     cursor:pointer;
     padding:.4em;
     font-size: 1.4em;
+}
+.fa-right-from-bracket{
+    right: 85% !important;
 }

@@ -50,11 +50,10 @@ main h1{
     cursor:pointer;
     transition: .2s;
 }
-
 .carta h3{
     margin-top: 3em;
 }
-.carta:hover{
+.contenedor-cartas a:hover{
     width:29%;
     height: 8.5em;
     font-size: 1.15em;

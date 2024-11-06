@@ -2,7 +2,7 @@
     session_start();
     if(isset($_SESSION['mesa']) && $_SESSION['mesa'] == 255){
         //Solo podrá acceder si al indicar mesa puso la del administrador
-        $mesa = 'Admin';
+        $mesa = $_SESSION['mesa'];
         $ruta = '../';
         require('header.php');
         require_once('config/conexion.php');

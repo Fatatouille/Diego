@@ -13,9 +13,13 @@
 </head>
 <body>
     <div class="contenedor-modal" id="contenedor-modal">
-        <div class="modal <?php echo ($mesa == 'Admin') ? "modmin" : ""; ?>">
+        <div class="modal <?php echo ($mesa == 255) ? "modmin" : ""; ?>">
             <i class="fa-regular fa-circle-xmark" id="cerrar"></i>
-            <?php if (!isset($mesa)){ //Se mostrará cuando no haya elegido mesa ?>
+            <?php
+            if(isset($_SESSION['mesa'])){
+                ?> <a href="<?= $ruta; ?>php/config/cerrar_sesion.php"><i class="fa-solid fa-right-from-bracket" alt="Cerrar sesion" title="Cerrar Sesion"></i></a>
+            <?php } 
+            if (!isset($mesa)){ //Se mostrará cuando no haya elegido mesa ?>
             <h3>¿En qué mesa está sentado?</h3>
             <form action="php/config/login.php" method="post">
                 <input type="number" name="mesa" id="mesa" placeholder="El número está pegado en la mesa">
@@ -23,9 +27,9 @@
             </form>
             <em>Recuerde que solo puede pedir si se encuentra en el local</em>
             <?php } else { //verifica si es administrador o no
-                if ($mesa=='Admin') {?>
-                    <h2>Administrador</h2>
-                    <form action="config/nuevo_producto.php" method="post">
+                if ($mesa==255) {?>
+                    <a href="<?= $ruta; ?>php/admin.php"><h2>Administrador</h2></a>
+                    <form action="<?= $ruta; ?>php/config/nuevo_producto.php" method="post">
                         <h3>Cargar nuevo producto</h3>
 
                         <label for="nombre">Nombre del producto</label>
@@ -65,7 +69,7 @@
     </div>
     <header>
         <div class="titulo">
-            <img src="<?= $ruta; ?>img/logo.png" alt="Logo de amor casero" title="Logo de amor casero">
+            <a href="<?= $ruta; ?>index.php"><img src="<?= $ruta; ?>img/logo.png" alt="Logo de amor casero" title="Logo de amor casero"></a>
             <div>
                 <h1>RESTOBAR</h1>
                 <h3>"Amor Casero"</h3>
