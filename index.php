@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="es-la">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amor casero</title>
-    <link rel="icon" href="img/logo.ico">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/cartas.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <script src="https://kit.fontawesome.com/17cb6f1d17.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<?php
+    require('php/header.php');
+?>
     <div class="contenedor-modal" id="contenedor-modal">
         <div class="modal">
             <i class="fa-regular fa-circle-xmark" id="cerrar"></i>
@@ -60,14 +50,4 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="pie">Restobar "Amor Casero"</div>
-        <div class="contactos">
-            <img src="img/correoLogo.png" alt="Nuestro correo" title="Nuestro correo">
-            <img src="img/wspLogo.png" alt="Nuestro Whatsapp" title="Nuestro Whatsapp">
-            <img src="img/llamadaLogo.png" alt="Nuestro numero" title="Nuestro numero">
-        </div>
-    </footer>
-    <script src="js/modal.js"></script>
-</body>
-</html>
+<?php   require ('php/footer.php'); ?>
