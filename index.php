@@ -42,19 +42,19 @@
                 <h3>Milanesas</h3>
             </div>
             <div class="carta burga">
-                <h3>Milanesas</h3>
+                <h3>Hamburguesas</h3>
             </div>
             <div class="carta pizza">
-                <h3>Milanesas</h3>
+                <h3>Pizzas</h3>
             </div>
-            <div class="carta">
-                <h3>Milanesas</h3>
+            <div class="carta plato">
+                <h3>Al plato</h3>
             </div>
-            <div class="carta">
-                <h3>Milanesas</h3>
+            <div class="carta postre">
+                <h3>Postres</h3>
             </div>
-            <div class="carta">
-                <h3>Milanesas</h3>
+            <div class="carta bebidas">
+                <h3>Bebidas</h3>
             </div>
         </div>
     </main>

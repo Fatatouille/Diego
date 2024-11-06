@@ -19,14 +19,30 @@ main h1{
     justify-content: center;
     align-items: center;
 }
+.mila{
+    background: url(../img/sangucheMila.jpg);
+}
+.burga{
+    background: url(../img/hamburguesa.jpg);
+}
+.pizza{
+    background: url(../img/pizza.jpg);
+}
+.plato{
+    background: url(../img/sorrentinos.jpg);
+}
+.postre{
+    background: url(../img/postre.jpg);
+}
+.bebidas{
+    background: url(../img/bebidas.jpg);
+}
 .carta{
     width: 25%;
     height: 8em;
     margin:2em;
     border-radius: 8px;
-    background: #fff;
     text-align: center;
-    background: url(../img/sangucheMila.jpg);
     background-size: cover;
     border:1px solid #000;
     color:#fff;
@@ -34,6 +50,7 @@ main h1{
     cursor:pointer;
     transition: .2s;
 }
+
 .carta h3{
     margin-top: 3em;
 }
