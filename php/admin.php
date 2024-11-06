@@ -18,6 +18,8 @@
                 <?php //Vamos a traer todos los pedidos de mesas ocupadas
                 while(mysqli_stmt_fetch($consulta)){ ?>
                     <div class="mesa">
+                        <a href="config/quitar_mesa.php?mesa=<?= $numero; ?>">
+                        <i class="fa-solid fa-trash-can" title="Quitar mesa" alt="Quitar mesa"></i></a>
                         <h3>Mesa Nro: <?= $numero; ?></h3>
                         <div class="comida">
                             <?php
