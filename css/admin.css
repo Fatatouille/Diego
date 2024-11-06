@@ -45,6 +45,16 @@
     border-top: 1px solid #000;
     padding: .5em;
     background: #d3b89e;
+    position: relative;
+    text-align: start;
+}
+.mozo i{
+    display:none;
+}
+.solicitado i{
+    display:block !important;
+    padding:.4em .2em;
+    font-size: 1.2em;
 }
 .solicitado{
     background: #e5736a;

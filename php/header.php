@@ -13,14 +13,52 @@
 </head>
 <body>
     <div class="contenedor-modal" id="contenedor-modal">
-        <div class="modal">
+        <div class="modal <?php echo ($mesa == 'Admin') ? "modmin" : ""; ?>">
             <i class="fa-regular fa-circle-xmark" id="cerrar"></i>
+            <?php if (!isset($mesa)){ //Se mostrará cuando no haya elegido mesa ?>
             <h3>¿En qué mesa está sentado?</h3>
             <form action="php/config/login.php" method="post">
                 <input type="number" name="mesa" id="mesa" placeholder="El número está pegado en la mesa">
                 <input type="submit" value="Empezar a pedir" name="enviar">
             </form>
             <em>Recuerde que solo puede pedir si se encuentra en el local</em>
+            <?php } else { //verifica si es administrador o no
+                if ($mesa=='Admin') {?>
+                    <h2>Administrador</h2>
+                    <form action="config/nuevo_pedido.php" method="post">
+                        <h3>Cargar nuevo producto</h3>
+
+                        <label for="nombre">Nombre del producto</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Comida rica">
+                        <label for="precio">Precio</label>
+                        <input type="number" name="precio" id="precio" placeholder="$0.00">
+                        <label for="clasificacion">Clasificacion</label>
+                        <select name="clasificacion" id="clasificacion">
+                            <option value="Milanesa">Milanesa</option>
+                            <option value="Hamburguesa">Hamburguesa</option>
+                            <option value="Pizza">Pizza</option>
+                            <option value="Plato">Al plato</option>
+                            <option value="Postre">Postre</option>
+                            <option value="Bebida">Bebida</option>
+                        </select>
+                        <label for="stock">Stock</label>
+                        <input type="number" name="stock" id="stock" placeholder="100">
+                        <input type="submit" value="Cargar">
+                    </form>
+                    <div class="stock">
+                        <h3>Actualizar stock</h3>
+                        <form action="config/actualizar.php" method="post">
+                            <label for="prod">Producto a actualizar</label>
+                            <input type="text" name="nombre" id="prod">
+                            <label for="st">Stock</label>
+                            <input type="number" name="stock" id="prod">
+                            <input type="submit" value="Actualizar">
+                        </form>
+                    </div>
+            <?php }else{
+
+                }
+            } ?>
         </div>
     </div>
     <header>

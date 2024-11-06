@@ -34,6 +34,7 @@
                         </div>
                         <div class="mozo <?php echo ($solicitud != "Ninguna") ? "solicitado" : "" ?>">
                             <?= 'Solicitud de mozo: '.$solicitud; ?>
+                            <i class="fa-solid fa-circle-check" title="Listo" alt="Listo"></i>
                         </div>
                         <div class="cobrar">
                             <?= '$'.$cobrar ?>

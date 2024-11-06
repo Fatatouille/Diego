@@ -19,6 +19,9 @@
     justify-content: space-evenly;
     position: relative;
 }
+.modmin{
+    height: 75% !important;
+}
 .modal form{
     display: flex;
     padding-top:1em;
@@ -27,12 +30,18 @@
     align-items: center;
     width: 100%;
 }
-.modal input{
+.modal>form>h3{
+    padding-bottom: .8em;
+}
+.modal input, .modal select{
     margin:.7em;
     width: 60%;
     padding:.8em;
     border-radius: 8px;
     border: 1px #cbdacbee solid;
+}
+.modal select{
+    width: 65% !important;
 }
 input[type="number"]::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
     -webkit-appearance: none;
