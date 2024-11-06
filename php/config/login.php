@@ -7,7 +7,6 @@
         $conexion=conectar();
         //Si se pudo, entra al if
         if($conexion){
-            $a=0;
             //Gurado en una variable el número de mesa enviado por el usuario
             $mesa=$_POST['mesa'];
 
@@ -23,9 +22,14 @@
             {
                 if($numero == $mesa)
                 {
+                    if($numero == 255){
+                        session_start();
+                        $_SESSION['mesa'] = $numero;
+                        header("refresh:0; url=../admin.php");
+                        exit();
+                    }
                     //Creo la sesión con la mesa en la que está sentado el usuario
                     session_start();
-                    $a++;
                     $_SESSION['mesa'] = $numero;
 
                     //Cierro la consulta de SELECT para darle paso al UPDATE
@@ -38,13 +42,13 @@
                     mysqli_stmt_close($actu);
                     //redirecciono al index
                     header("refresh:0; url=../../index.php");
+                    //Si se encuentra mesa, fin del codigo
                     exit();
                 }
             }
-            if($a==0){
-                header("refresh:0.1; url=../../index.php");
-                ?><script>alert("Lo sentimos, la mesa indicada se encuentra ocupada. Si se trata de un error, comuniquelo a un empleado.")</script> <?php
-            }
+            //Si no se encuentra mesa, sucede esto.
+            header("refresh:0.1; url=../../index.php");
+            ?><script>alert("Lo sentimos, la mesa indicada se encuentra ocupada. Si se trata de un error, comuniquelo a un empleado.")</script> <?php
         }
         desconectar($conexion);
     }

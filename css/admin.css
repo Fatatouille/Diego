@@ -1,0 +1,50 @@
+.admin{
+    position:absolute;
+    overflow: hidden;
+    top: 12%;
+    left: 20%;
+    width:65%;
+    height:75%;
+    border-radius: 8px;
+    padding:1em;
+    background: #ffffffe4;
+    text-align: center;
+}
+.pedidos{
+    width: 95%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding:1em;
+}
+.mesa{
+    width: 40%;
+    background: #fbe4c2;
+    height: 30%;
+    border-radius: 5px;
+    border:.6px solid #000;
+}
+.mesa h3{
+    padding:.5em;
+}
+.comida{
+    text-align: start;
+    border-top: 1px solid #000;
+}
+.comida p{
+    padding: 1em;
+}
+.cobrar{
+    border-top:1px solid #000;
+    padding:.6em;
+}
+.mozo{
+    border-top: 1px solid #000;
+    padding: .5em;
+    background: #d3b89e;
+}
+.solicitado{
+    background: #e5736a;
+}
