@@ -25,7 +25,7 @@
             <?php } else { //verifica si es administrador o no
                 if ($mesa=='Admin') {?>
                     <h2>Administrador</h2>
-                    <form action="config/nuevo_pedido.php" method="post">
+                    <form action="config/nuevo_producto.php" method="post">
                         <h3>Cargar nuevo producto</h3>
 
                         <label for="nombre">Nombre del producto</label>
