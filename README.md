@@ -15,3 +15,5 @@ Los temas en específicos que van a estudiar y desde ya sé que voy a usar (si d
 Van a tener que aprender un poco de esto también.<br>
 > * ÍNDICES y códigos de error<br>
 > * Consultas (INSERT, UPDATE, SELECT, UPDATE)<br>
+
+### El número de mesa del administrador será 255.
