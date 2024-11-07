@@ -13,7 +13,10 @@
     <script src="https://kit.fontawesome.com/17cb6f1d17.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="contenedor-modal" id="contenedor-modal">
+    <!-- Inicio del modal para gestionar cuentas -->
+
+    <!-- --------------------------------------- -->
+    <div class="contenedor-modal" id="modal-cuenta">
         <div class="modal <?php if(isset($_SESSION['mesa'])) { 
             if($mesa==255){
                 echo "modmin";
@@ -35,7 +38,9 @@
                 <input type="submit" value="Empezar a pedir" name="enviar">
             </form>
             <em>Recuerde que solo puede pedir si se encuentra en el local</em>
-            <?php } else { //verifica si es administrador o no
+            <?php } else {
+                //verifica si es administrador o no
+//-----------------------------------------------------------------------
                 if ($mesa==255) {?>
                     <a href="<?= $ruta; ?>php/admin.php"><h2>Administrador</h2></a>
                     <form action="<?= $ruta; ?>php/config/nuevo_producto.php" method="post">
@@ -71,6 +76,8 @@
                         </form>
                     </div>
             <?php }else{
+                //Modal para comensal
+// ----------------------------------------------------------------------
                     require_once($ruta.'php/config/conexion.php');
                     $conexion=conectar();
 
@@ -118,6 +125,17 @@
             } ?>
         </div>
     </div>
+<!-- -------------------------------------------------- -->
+    <div class="contenedor-modal" id="modal-nosotros">
+        <div class="modal">
+            <i class="fa-regular fa-circle-xmark" id="cerrardos"></i>
+            <h2>Integrantes del grupo</h2>
+            <h4>Diego González</h4>
+            <h4>Florencia Lescano</h4>
+            <h4>Julieta Ríos</h4>
+            <h4>Malena Coronel</h4>
+        </div>
+    </div>
     <header>
         <div class="titulo">
             <a href="<?= $ruta; ?>index.php"><img src="<?= $ruta; ?>img/logo.png" alt="Logo de amor casero" title="Logo de amor casero"></a>
@@ -128,7 +146,7 @@
         </div>
         <nav>
             <ul>
-                <li>Sobre nosotros</li>
+                <li id="nosotros">Sobre nosotros</li>
                 <!--Uso un operador ternario para saber qué mensaje mostrar en el header -->
                 <li id="modal-log"><?php echo (isset($mesa)) ? "Cuenta (Mesa $mesa)" : "Empieza a pedir"; ?></li>
             </ul>
