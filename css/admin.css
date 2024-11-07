@@ -33,9 +33,11 @@
 .comida{
     text-align: start;
     border-top: 1px solid #000;
-}
-.comida p{
-    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:start;
+    flex-direction: column;
+    padding:.2em;
 }
 .cobrar{
     border-top:1px solid #000;

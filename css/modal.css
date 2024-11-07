@@ -69,3 +69,7 @@ i{
 .fa-right-from-bracket{
     right: 85% !important;
 }
+.usuario{
+    height:60%;
+    justify-content: center;
+}

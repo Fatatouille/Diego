@@ -27,7 +27,7 @@ mysqli_stmt_bind_result($query, $nombre, $precio, $clasificacion, $stock);
                 <h3><?= $nombre; ?></h3>
                 <p>$<?= $precio; ?></p>
             </div>
-            <a href="<?php echo ($stock > 0) ? 'config/agregar_carrito.php?prod='.$nombre.'&precio='.$precio.'' : "#"; ?>" ><div class="add">
+            <a href="<?php echo ($stock > 0) ? 'config/agregar_carrito.php?prod='.$nombre.'&precio='.$precio.'&stock='.$stock.'' : "#"; ?>" ><div class="add">
                 <i class="fa-solid fa-cart-plus"></i>
             </div></a>
         </div>

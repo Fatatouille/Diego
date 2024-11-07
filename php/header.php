@@ -14,7 +14,15 @@
 </head>
 <body>
     <div class="contenedor-modal" id="contenedor-modal">
-        <div class="modal <?php echo ($mesa == 255) ? "modmin" : ""; ?>">
+        <div class="modal <?php if(isset($_SESSION['mesa'])) { 
+            if($mesa==255){
+                echo "modmin";
+            }else{
+                echo "usuario";
+            }
+         }else{
+            echo "";
+         } ?>">
             <i class="fa-regular fa-circle-xmark" id="cerrar"></i>
             <?php
             if(isset($_SESSION['mesa'])){
@@ -63,7 +71,48 @@
                         </form>
                     </div>
             <?php }else{
+                    require_once($ruta.'php/config/conexion.php');
+                    $conexion=conectar();
 
+                    $consulta=mysqli_prepare($conexion, "SELECT * FROM mesas WHERE Numero = '$mesa'");
+                    $exe=mysqli_stmt_execute($consulta);
+                    mysqli_stmt_bind_result($consulta, $numero, $estado, $pedido, $cobrar, $solicitud);
+                    while (mysqli_stmt_fetch($consulta)){
+
+                    
+                ?> 
+                        <h3>Mesa Nro: <?= $mesa; ?></h3>
+                        <div class="comida usuario">
+                            <?php
+                            //Funciona de la misma forma que funcionan los pedidos en admin, fijarse comentarios ahí
+                            if($pedido!="Nada"){
+
+                                $comida = explode(',', $pedido);
+                                for ($i=0; $i<sizeof($comida); $i++){
+                                    if($comida[$i]!=''){
+                                        echo '<p>-'.$comida[$i].'</p><br>';
+                                    }
+                                }
+                            }else{
+                                echo '<p>Aún no ha pedido nada.</p>';
+                            }
+                            ?>
+                        </div>
+                            <div class="mozo <?php echo ($solicitud != "Ninguna") ? "solicitado" : "" ?>">
+                            <?= 'Solicitud de mozo: '.$solicitud; ?>
+                            </div>
+                            <div class="cobrar">
+                                <?= '$'.$cobrar ?>
+                            </div>
+                            <form action="$ruta.'php/config/solicitar_mozo.php" method="get">
+                                <select name="mozo" id="mozo">
+                                    <option value="Cobrar">Cobrar</option>
+                                    <option value="Solicitado">Llamar a mesa</option>
+                                </select>
+                                <input type="submit" value="Llamar Mozo">
+                            </form> 
+                <?php 
+                    }
                 }
             } ?>
         </div>

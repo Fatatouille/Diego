@@ -12,7 +12,7 @@ if(isset($_SESSION['mesa'])){
         $exe=mysqli_stmt_execute($up);
 
         if($exe){
-            ?><script>alert('Mesa libre!.')</script> <?php
+            ?><script>alert('Mesa libre!')</script> <?php
         }else{
             ?><script>alert('No se pudo liberar la mesa.')</script> <?php
         }
