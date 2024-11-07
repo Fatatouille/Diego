@@ -17,10 +17,10 @@ if(isset($_SESSION['mesa']) && isset($_GET)){
     //cerramos la query actual
 
     //Sumamos el precio del producto actual a lo que ya venía en la cuenta
-    $cobrar+=$precio;
 
     //En caso de no haber encargado nada anteriormente, cargamos solo este pedido
     while(mysqli_stmt_fetch($select)){
+        $cobrar+=$precio;
         if($pedido == "Nada"){
             $actual=$nombre;
         }else{

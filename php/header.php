@@ -104,11 +104,12 @@
                             <div class="cobrar">
                                 <?= '$'.$cobrar ?>
                             </div>
-                            <form action="$ruta.'php/config/solicitar_mozo.php" method="get">
+                            <form action="<?=$ruta; ?>php/config/solicitar_mozo.php?" method="get">
                                 <select name="mozo" id="mozo">
                                     <option value="Cobrar">Cobrar</option>
                                     <option value="Solicitado">Llamar a mesa</option>
                                 </select>
+                                <input type="hidden" name="mesa" value="<?=$mesa; ?>">
                                 <input type="submit" value="Llamar Mozo">
                             </form> 
                 <?php 
