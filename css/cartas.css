@@ -50,6 +50,9 @@ main h1{
     cursor:pointer;
     transition: .2s;
 }
+.carta:visited{
+    color:#fff !important;
+}
 .carta h3{
     margin-top: 3em;
 }

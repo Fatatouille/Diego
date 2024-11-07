@@ -11,6 +11,7 @@ require('php/header.php');
 <main>
     <h1><em>La mejor comida que podrás encontrar en el planeta tierra...</em></h1>
     <div class="contenedor-cartas">
+    <!--Cada carta tiene un adicional en el link para que pueda identificar qué dato queremos saber en la página de precios-->
         <a href="php/opciones.php?clas=Milanesa" class="carta mila">
             <div >
                 <h3>Milanesas</h3>

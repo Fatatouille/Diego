@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= $ruta; ?>css/cartas.css">
     <link rel="stylesheet" href="<?= $ruta; ?>css/modal.css">
     <link rel="stylesheet" href="<?= $ruta; ?>css/admin.css">
+    <link rel="stylesheet" href="<?= $ruta; ?>css/precios.css">
     <script src="https://kit.fontawesome.com/17cb6f1d17.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
             <?php } 
             if (!isset($mesa)){ //Se mostrará cuando no haya elegido mesa ?>
             <h3>¿En qué mesa está sentado?</h3>
-            <form action="php/config/login.php" method="post">
+            <form action="<?= $ruta; ?>php/config/login.php" method="post">
                 <input type="number" name="mesa" id="mesa" placeholder="El número está pegado en la mesa">
                 <input type="submit" value="Empezar a pedir" name="enviar">
             </form>

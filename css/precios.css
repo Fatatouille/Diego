@@ -1,0 +1,23 @@
+.precios{
+    padding-left: 0;
+    padding-right: 0;
+}
+.productos{
+    width: 100%;
+    border-top: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.mostrar{
+    border-right:1px solid #000;
+    width: 49.75%;
+    position: relative;
+    border-bottom: 1px solid #000;
+}
+.mostrar i{
+    background: #0fac0fee;
+}
+.nostock{
+    color:#fc0000;
+}
